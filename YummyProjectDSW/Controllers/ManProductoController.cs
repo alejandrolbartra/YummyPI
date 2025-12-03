@@ -162,6 +162,7 @@ namespace yummyApp.Controllers
                 {
                     SqlCommand cmd = new SqlCommand("usp_merge_producto", cn);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", reg.id_producto);
                     cmd.Parameters.AddWithValue("@nom", reg.nombre);
                     cmd.Parameters.AddWithValue("@prec", reg.precio);
                     cmd.Parameters.AddWithValue("@stock", reg.stock);
