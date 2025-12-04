@@ -178,6 +178,7 @@ where estado=1
 go
 
 CREATE OR ALTER PROCEDURE usp_merge_producto
+    @id INT,
     @nom VARCHAR(255),
     @prec DECIMAL(10,2),
     @stock INT,
@@ -186,15 +187,16 @@ CREATE OR ALTER PROCEDURE usp_merge_producto
 AS
 BEGIN
     SET NOCOUNT OFF;
-    IF EXISTS (SELECT 1 FROM Producto WHERE nombreProducto = @nom)
+    IF EXISTS (SELECT 1 FROM Producto WHERE idProducto = @id)
     BEGIN
         UPDATE Producto
         SET
+            nombreProducto = @nom,
             precioProd = @prec,
             stockProd = @stock,
             idCategoriaOrigen = @id_cat_or,
             idCategoriaComida = @id_cat_com
-        WHERE nombreProducto = @nom;
+        WHERE idProducto = @id;
     END
     ELSE
     BEGIN
