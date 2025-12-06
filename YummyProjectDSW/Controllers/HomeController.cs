@@ -17,7 +17,6 @@ namespace yummyApp.Controllers
         {
             _config = config;
         }
-
         private readonly IConfiguration _config;
 
         public IActionResult Index()
@@ -29,7 +28,6 @@ namespace yummyApp.Controllers
         {
             return View();
         }
-
 
         IEnumerable<ProductoModel> listGeneralProductos()
         {
@@ -58,60 +56,12 @@ namespace yummyApp.Controllers
 
             return temporal;
         }
-
-        IEnumerable<CategoriaComida> listCatComidas()
-        {
-            List<CategoriaComida> temporal = new List<CategoriaComida>();
-            using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]))
-            {
-                cn.Open();
-                SqlCommand cmd = new SqlCommand("exec usp_catcomida", cn);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    temporal.Add(new CategoriaComida()
-                    {
-                        idCategoriaComida = dr.GetInt32(0),
-                        nombreCategoriaComida = dr.GetString(1),
-                    });
-                }
-                dr.Close();
-            }
-            return temporal;
-        }
-
-        IEnumerable<CategoriaOrigen> listCatOrigenes()
-        {
-            List<CategoriaOrigen> temporal = new List<CategoriaOrigen>();
-            using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]))
-            {
-                cn.Open();
-                SqlCommand cmd = new SqlCommand("exec usp_catorigen", cn);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    temporal.Add(new CategoriaOrigen()
-                    {
-                        idCategoriaOrigen = dr.GetInt32(0),
-                        nombreCategoriaOrigen = dr.GetString(1),
-                    });
-                }
-                dr.Close();
-            }
-            return temporal;
-        }
       
         public async Task<IActionResult> TiendaGeneral()
         {
             var temporal = listGeneralProductos();
             return View(await Task.Run(() => temporal));
         }
-
-        public IActionResult Menu()
-        {
-            return View();
-        }
-
 
         private List<ProductoModel> ObtenerProductosPorIds(List<int> ids)
         {

@@ -2,7 +2,7 @@
 
 namespace yummyApp.Controllers
 {
-    public class ManDetalleVentaController : Controller
+    public class ManCatComidaController : Controller
     {
         public IActionResult Index()
         {
