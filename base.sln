@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yummyApp", "YummyProjectDSW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yummyAppUsuarioApi", "yummyAppUsuarioApi\yummyAppUsuarioApi.csproj", "{087815A7-ADD5-9E82-AA04-97E13E548B34}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yummyAppVentaApi", "yummyAppVentaApi\yummyAppVentaApi.csproj", "{42483413-880B-458E-B48C-E9B23FBE02B2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{087815A7-ADD5-9E82-AA04-97E13E548B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{087815A7-ADD5-9E82-AA04-97E13E548B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{087815A7-ADD5-9E82-AA04-97E13E548B34}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42483413-880B-458E-B48C-E9B23FBE02B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42483413-880B-458E-B48C-E9B23FBE02B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42483413-880B-458E-B48C-E9B23FBE02B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42483413-880B-458E-B48C-E9B23FBE02B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
