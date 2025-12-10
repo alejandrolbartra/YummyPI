@@ -1,0 +1,52 @@
+﻿@model yummyApp.Models.ManComida
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0"><i class="bi bi-eye"></i> @ViewData["Title"]</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3 fw-bold">
+                    @Html.DisplayNameFor(model => model.idCategoriaComida)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.idCategoriaComida)
+                </dd>
+
+                <dt class="col-sm-3 fw-bold">
+                    @Html.DisplayNameFor(model => model.nombreCategoriaComida)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.nombreCategoriaComida)
+                </dd>
+
+                <dt class="col-sm-3 fw-bold">
+                    @Html.DisplayNameFor(model => model.estado)
+                </dt>
+                <dd class="col-sm-9">
+                    @if (Model.estado == 1)
+                    {
+                        <span class="badge bg-success">Activo</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Inactivo</span>
+                    }
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <a asp-action="ListadoGeneralCatComida" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Volver al listado
+            </a>
+            <a asp-action="Edit" asp-route-id="@Model.idCategoriaComida" class="btn btn-warning">
+                <i class="bi bi-pencil-square"></i> Editar
+            </a>
+        </div>
+    </div>
+</div>

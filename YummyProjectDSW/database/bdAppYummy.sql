@@ -526,3 +526,45 @@ update CategoriaOrigen
 set estado = 0
 where idCategoriaOrigen = @id
 go
+
+
+--===================================================================
+--Nuevos procedimientos para CRUD Categoria comida
+SELECT idCategoriaComida, nombreCategoriaComida, estado FROM CategoriaComida
+GO
+--usp_merge_catOrigen
+CREATE OR ALTER PROCEDURE usp_merge_catComida
+    @id int,
+    @nom varchar(255)
+as
+begin
+    set nocount off;
+    if exists (select 1 from CategoriaComida where idCategoriaComida = @id)
+    begin
+        update CategoriaComida
+        set nombreCategoriaComida = @nom
+        where idCategoriaComida = @id;
+    end
+    else
+    begin
+        insert into CategoriaComida(nombreCategoriaComida, estado)
+        values (@nom, 1);
+    end
+end
+go
+
+--usp_catOrigen
+CREATE OR ALTER PROCEDURE usp_catComida
+as
+select * from CategoriaComida
+where estado = 1
+go
+
+--usp_desactivar_catOrigen
+CREATE OR ALTER PROCEDURE usp_desactivar_catComida
+@id int
+as
+update CategoriaComida
+set estado = 0
+where idCategoriaComida = @id
+go
