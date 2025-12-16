@@ -14,12 +14,6 @@
                 <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
 
                 <div class="mb-3">
-                    <label asp-for="idCategoriaOrigen" class="form-label"></label>
-                    <input asp-for="idCategoriaOrigen" class="form-control" />
-                    <span asp-validation-for="idCategoriaOrigen" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
                     <label asp-for="nombreCategoriaOrigen" class="form-label"></label>
                     <input asp-for="nombreCategoriaOrigen" class="form-control" />
                     <span asp-validation-for="nombreCategoriaOrigen" class="text-danger"></span>
@@ -39,6 +33,15 @@
                 </div>
             </form>
         </div>
+
+        <div class="card-footer text-muted">
+            @ViewBag.mensaje
+            <div class="mt-2">
+                <a asp-controller="ManProducto" asp-action="ListadoGeneralProductos"></a>
+            </div>
+        </div>
+
+
     </div>
 </div>
 
@@ -47,3 +50,4 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+
