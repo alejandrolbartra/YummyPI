@@ -179,20 +179,17 @@
 	@await RenderSectionAsync("Scripts", required: false)
 
 	<script>
-		window.watsonAssistantChatOptions = {
-			integrationID: "72e7689d-4264-46a0-bbad-8506a0fc4dce",
-			region: "au-syd",
-			serviceInstanceID: "cd22d213-4d91-4ea2-bb99-2ff52a863d40",
-			onLoad: async (instance) => { await instance.render(); }
-		};
-	
-		setTimeout(function() {
-			const t = document.createElement('script');
-			t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
-				   (window.watsonAssistantChatOptions.clientVersion || 'latest') +
-				   "/WatsonAssistantChatEntry.js";
-			document.head.appendChild(t);
-		});
+	  window.watsonAssistantChatOptions = {
+	    integrationID: "696246c9-ff55-4441-9b90-d1ed51c2325a", // The ID of this integration.
+	    region: "au-syd", // The region your integration is hosted in.
+	    serviceInstanceID: "13f9099a-6bf8-45ad-a4e0-683bc2a236c2", // The ID of your service instance.
+	    onLoad: async (instance) => { await instance.render(); }
+	  };
+	  setTimeout(function(){
+	    const t=document.createElement('script');
+	    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+	    document.head.appendChild(t);
+	  });
 	</script>
 
 </body>
