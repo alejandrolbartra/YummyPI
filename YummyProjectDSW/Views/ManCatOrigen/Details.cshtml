@@ -25,19 +25,7 @@
                     @Html.DisplayFor(model => model.nombreCategoriaOrigen)
                 </dd>
 
-                <dt class="col-sm-3 fw-bold">
-                    @Html.DisplayNameFor(model => model.estado)
-                </dt>
-                <dd class="col-sm-9">
-                    @if (Model.estado == 1)
-                    {
-                        <span class="badge bg-success">Activo</span>
-                    }
-                    else
-                    {
-                        <span class="badge bg-secondary">Inactivo</span>
-                    }
-                </dd>
+                
             </dl>
         </div>
         <div class="card-footer d-flex justify-content-between">

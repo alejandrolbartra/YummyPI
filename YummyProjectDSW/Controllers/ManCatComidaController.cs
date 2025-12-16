@@ -29,7 +29,7 @@ namespace yummyApp.Controllers
                     cmd.Parameters.AddWithValue("@nom", cat.nombreCategoriaComida);
                     cn.Open();
                     int i = cmd.ExecuteNonQuery();
-                    mensaje = $"Se ha adicionado o alterado {i} categoria-origen";
+                    mensaje = $"Se ha adicionado o alterado {i} categoria-comida";
                 }
                 catch (SqlException ex) { mensaje = ex.Message; }
                 finally { cn.Close(); }

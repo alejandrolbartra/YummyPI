@@ -1,7 +1,7 @@
 ﻿@model yummyApp.Models.ManComida
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
 }
 
 <div class="container mt-4">
@@ -34,6 +34,12 @@
                     </button>
                 </div>
             </form>
+        </div>
+        <div class="card-footer text-muted">
+            @ViewBag.mensaje
+            <div class="mt-2">
+                <a asp-controller="ManComida" asp-action="ListadoGeneralCatComida"></a>
+            </div>
         </div>
     </div>
 </div>

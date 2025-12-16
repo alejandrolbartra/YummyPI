@@ -1,7 +1,7 @@
 ﻿@model yummyApp.Models.ManComida
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear";
 }
 
 <div class="container mt-4">
@@ -12,12 +12,6 @@
         <div class="card-body">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
-
-                <div class="mb-3">
-                    <label asp-for="idCategoriaComida" class="form-label"></label>
-                    <input asp-for="idCategoriaComida" class="form-control" />
-                    <span asp-validation-for="idCategoriaComida" class="text-danger"></span>
-                </div>
 
                 <div class="mb-3">
                     <label asp-for="nombreCategoriaComida" class="form-label"></label>
@@ -39,6 +33,14 @@
                 </div>
             </form>
         </div>
+
+        <div class="card-footer text-muted">
+            @ViewBag.mensaje
+            <div class="mt-2">
+                <a asp-controller="ManComida" asp-action="ListadoGeneralCatComida"></a>
+            </div>
+        </div>
+
     </div>
 </div>
 
